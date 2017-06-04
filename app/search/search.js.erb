@@ -1,0 +1,5 @@
+<% if @result[:error].present? %>
+  $('#search-results').html("<%= j render(partial:'search_error')  %>")
+<% else %>
+  $('#search-results').html("<%= j render(partial:'search_results', locals: { result: @result }) %>")
+<% end %>

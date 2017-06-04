@@ -1,0 +1,7 @@
+<% items.each do |item| %>
+    <div class="search-result">
+      <p><div class='search-result-name'><b><%= item['name'] %></b></div></p>
+      <p><div class='search-result-type'><b>Type:</b> <%= item['type'] %></div></p>
+      <p><div class='search-result-designed-by'><b>Designed by:</b>  <%= item['designed by'] %></p></div>
+    </div>
+<% end %>

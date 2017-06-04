@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root :controller => 'search', :action => :new
+  match '/search/new', to: 'search#new', via: :get
+  match '/search', to: 'search#search', via: :post
 end

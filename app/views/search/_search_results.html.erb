@@ -1,0 +1,11 @@
+<% if result[:full_match].present? %>
+    <%= render(partial: 'search_result', locals: { items: result[:full_match] }) %>
+    <% if @result[:other_results].present? %>
+        <div class ='search-other-result-label'><h2>You may also be interested in:</h2></div>
+        <div class ='search-other-results'>
+          <%= render(partial: 'search_result', locals: { items: result[:other_results] }) %>
+        </div>
+    <% end %>
+<% else %>
+    <div class="empty-search-result"><h2>Sorry, we didn't find anything</h2></div>
+<% end %>

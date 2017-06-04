@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="form-container">
+    <%= form_tag(search_path, id: 'search-form-wrapper', remote: true) do %>
+        <%= label_tag(:q, 'Search for:') %>
+        <%= text_field_tag :q, '', required: true %>
+        <%= submit_tag('Search') %>
+    <% end %>
+  </div>
+  <div id = 'search-results'></div>
+</div>
+
