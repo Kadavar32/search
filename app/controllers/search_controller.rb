@@ -3,8 +3,8 @@ class SearchController < ApplicationController
 
   def search
     @result = Searchable::Search.invoke(search_params)
-  rescue
-     @result = { error: true }
+  rescue => exc
+    @result = { error: true }
   ensure
     respond_to do |format|
       format.html
