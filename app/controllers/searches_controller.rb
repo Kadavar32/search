@@ -2,7 +2,7 @@
 
 class SearchesController < ApplicationController
   def create
-    @result = [{ name: 'Name', type: 'Type', designed_by: 'designed by' }.with_indifferent_access]
+    @result = Searchable::SearchService.invoke(search_params)
   rescue => exc
     puts exc.message
     @result = { error: true }
@@ -15,5 +15,11 @@ class SearchesController < ApplicationController
 
   def  new
 
+  end
+
+  private
+
+  def search_params
+    params.require(:q)
   end
 end
